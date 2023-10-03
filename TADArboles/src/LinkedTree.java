@@ -1,6 +1,6 @@
 import material.Position;
 
-import java.util.Iterator;
+import java.util.*;
 
 
 /**
@@ -18,6 +18,34 @@ public class LinkedTree<E> implements NAryTree<E> {
      * @param <T> the type of element stored in the node
      */
     private class TreeNode<T> implements Position<T> {
+        private List<TreeNode<T>> children;
+        private T element;
+        private TreeNode<T> parent;
+
+        public TreeNode(List<TreeNode<T>> children, TreeNode<T> parent) {
+            this.children = children;
+            this.parent = parent;
+        }
+
+        public List<TreeNode<T>> getChildren() {
+            return children;
+        }
+
+        public TreeNode<T> getParent() {
+            return parent;
+        }
+
+        public void setChildren(List<TreeNode<T>> children) {
+            this.children = children;
+        }
+
+        public void setElement(T element) {
+            this.element = element;
+        }
+
+        public void setParent(TreeNode<T> parent) {
+            this.parent = parent;
+        }
 
         @Override
         public T getElement() {
@@ -31,9 +59,13 @@ public class LinkedTree<E> implements NAryTree<E> {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    private TreeNode<E> checkPosition(Position<E> p){
+        if ()
+    }
     @Override
     public Position<E> add(E element, Position<E> p) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        TreeNode<E> parent=checkPosition(p);
+
     }
 
     @Override
